@@ -2,28 +2,27 @@
 #include <QDebug>
 #include <iostream>
 
-int age{};
-
 int addTen(int age)
 {
-    ::age += 10;
-    return ::age;
+    return age + 10;
 }
 
 void dogYears(int value)
 {
-    age *= 7;
+    int age = value * 7;
     qInfo() << "Dog Years : " << age;
 }
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
+    int age {};
 
     qInfo() << "Enter your age : ";
     std::cin >> age;
 
-    qInfo() << "Ten : " << addTen(age);
+    age = addTen(age);
+    qInfo() << "Ten : " << age;
     dogYears(age);
 
     return a.exec();
