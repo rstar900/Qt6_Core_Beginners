@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     QCoreApplication a(argc, argv);
 
     // making a Calc object on heap using getCalc() function
-    Calc* calc = getCalc();
+    Calc* calc = getCalc(); // optionally getCalc(&a) so that no delete is needed as 'a' is parent
 
     int age{};
 
